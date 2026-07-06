@@ -1,0 +1,67 @@
+{
+  "name": "bevformer_delivery_demo",
+  "default_variant": "strict_w8a8_train64",
+  "purpose": "YOLOv5s-style Python board demo for BEVFormer AidLite inference from raw camera JPG inputs to final W8A8 detections and visualization.",
+  "models": {
+    "backbone": "artifacts/models/backbone_context.bin",
+    "encoder_temporal": "artifacts/models/temporal_encoder_context.bin",
+    "encoder_scene_start": "artifacts/models/scene_start_encoder_context.bin",
+    "decoder": "artifacts/models/decoder_context.bin"
+  },
+  "sha256": {
+    "backbone": "a1988955080440ba95892b7b484f3677948508fcdae94a3e4aca34ff5b055a76",
+    "encoder_temporal": "c0950b33c725a8c899520a35e8d11826204766b11beae7693516c0b1648772fb",
+    "encoder_scene_start": "cc5e9c75e517ba413279d8277f14e7f2c11752d7f06a59429bf1bde193802bfe",
+    "decoder": "dacebf6428168bbe0e29410f05285a7fde454860a607c73f983149e607b78d7c"
+  },
+  "dataset_split_contract": {
+    "demo_sample": "datasets/sample4 raw-camera sample",
+    "frame_count": 4,
+    "continuous": true,
+    "quantization_data_included": false,
+    "full_evaluation_data_included": false
+  },
+  "scene_start_indices": [
+    0
+  ],
+  "inputs": {
+    "asset_manifest": "datasets/sample4/asset_manifest.json",
+    "raw_asset_policy": "The default demo is self-contained and includes only four continuous frames: six-camera JPGs plus small calibration/temporal tensors.",
+    "image_preprocess": "cv2.imread BGR -> RGB -> normalize(mean/std) -> resize(800,450) -> CHW -> zero-pad to (6,3,480,800)",
+    "runtime_sha_policy": "Camera JPG existence is always checked. Per-image SHA verification is available with --check_image_sha and is disabled by default to keep preprocessing timing focused on decode/normalize/resize.",
+    "preprocess_workers_default": 6
+  },
+  "timing_contract": {
+    "qnn_invoke_ms": "Backbone + encoder + decoder invoke time only.",
+    "image_preprocess_ms": "Six-camera JPG decode, RGB conversion, normalization, resize, CHW conversion, and zero padding.",
+    "frame_total_ms": "Per-frame inference path: image preprocessing plus model input/output and QNN invoke time; excludes NMS, result saving, and camera-grid visualization rendering.",
+    "complete_inference_no_visualization_ms": "Manifest load plus all frame inference, NMS, and result saving; excludes PNG/GIF rendering.",
+    "complete_inference_with_visualization_ms": "Full run_manifest wall time including PNG/GIF rendering; excludes Python process startup and model loading, which are reported separately.",
+    "program_total_ms_with_model_load_and_summary": "Application-level wall time measured inside Python after process startup; includes model loading, inference, visualization when enabled, and summary writing."
+  },
+  "postprocess": {
+    "nms_contract": "configs/nms_runtime_contract.json",
+    "decoder": "python/portable_numpy_nmsfreecoder.py",
+    "output": "frameXXX_final_coordinates.npz",
+    "visualization": "frameXXX_camera_grid.png + sample4_camera_grid.gif"
+  },
+  "outputs": {
+    "default_dir": "outputs/board_sample4",
+    "default_frame_count": 4
+  },
+  "visualization": {
+    "mode": "w8a8_only_random10_style_camera_grid",
+    "script": "python/visualize_sample4.py",
+    "input": "frameXXX_final_coordinates.npz from run_test.py plus bundled sample4 camera JPG/lidar2img assets",
+    "output": "frameXXX_camera_grid.png and sample4_camera_grid.gif",
+    "frame_count": 4,
+    "score_thr": 0.25,
+    "max_boxes": 80,
+    "external_reference_required": false,
+    "panel_width": 900
+  },
+  "expected_sample4_encoder_counts": {
+    "scene_start": 1,
+    "temporal": 3
+  }
+}

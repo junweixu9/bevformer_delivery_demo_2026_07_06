@@ -1,0 +1,535 @@
+{
+  "audit_type": "BEVFORMER_DELIVERY_DEMO_SAMPLE4_MANIFEST",
+  "status": "PASS",
+  "mode": "self_contained_sample4_raw_camera_to_detection",
+  "total_frames": 4,
+  "scene_start_indices": [
+    0
+  ],
+  "frame_range": [
+    0,
+    3
+  ],
+  "note": "Self-contained 4-frame continuous board demo sample. Image input starts from bundled raw camera JPEGs; Python preprocessing runs on board.",
+  "frames": {
+    "sample_000": {
+      "dataset_index": 0,
+      "sample_token": "3e8750f331d7499e9b5123e9eb70f2e2",
+      "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+      "prev_token": "",
+      "next_token": "3950bd41f74548429c0f7700ff3d8269",
+      "is_scene_start": true,
+      "assets": {
+        "can_bus": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            18
+          ],
+          "bytes": 36,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/can_bus.raw",
+          "sha256": "974730a9cf60a4a0cae487ed4b296faf6621abec0bcd7276020ade042fd8dc3b"
+        },
+        "lidar2img": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            6,
+            4,
+            4
+          ],
+          "bytes": 192,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/lidar2img.raw",
+          "sha256": "f1df04f672d707f2fbc8ea9799ee84d8795a1fe22f17ed89c08327e63f663501"
+        },
+        "camera_images": {
+          "type": "raw_camera_jpeg_multiview",
+          "order": [
+            "CAM_FRONT",
+            "CAM_FRONT_RIGHT",
+            "CAM_FRONT_LEFT",
+            "CAM_BACK",
+            "CAM_BACK_LEFT",
+            "CAM_BACK_RIGHT"
+          ],
+          "decode": "cv2.imread BGR",
+          "pipeline": "BGR -> RGB -> normalize(mean/std) -> resize(800,450) -> CHW -> pad to 480 rows",
+          "mean": [
+            123.675,
+            116.28,
+            103.53
+          ],
+          "std": [
+            58.395,
+            57.12,
+            57.375
+          ],
+          "to_rgb": true,
+          "resize": [
+            800,
+            450
+          ],
+          "output_shape_unpadded": [
+            6,
+            3,
+            450,
+            800
+          ],
+          "output_shape_padded": [
+            6,
+            3,
+            480,
+            800
+          ],
+          "reference_preprocessed_sha256": "87de4dfddc0cb554908b8c9a89d76125e8698bfbf5ece9d366de924a938d4b1d",
+          "images": [
+            {
+              "name": "CAM_FRONT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/cameras/CAM_FRONT.jpg",
+              "sha256": "0e2067a1618c4424050c45c393ada8c9dbf130fff8d6015004fce901dc07984d",
+              "bytes": 141976
+            },
+            {
+              "name": "CAM_FRONT_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/cameras/CAM_FRONT_RIGHT.jpg",
+              "sha256": "15cf59c79b086d14da6fae5a7ee5b0f4d0fac0c0a22c0a85faaa5fb215521191",
+              "bytes": 147910
+            },
+            {
+              "name": "CAM_FRONT_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/cameras/CAM_FRONT_LEFT.jpg",
+              "sha256": "8c52f73a3ef06a129c27ef51ac65704428caebfaa60c52f14a5953bbb0124a18",
+              "bytes": 144177
+            },
+            {
+              "name": "CAM_BACK",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/cameras/CAM_BACK.jpg",
+              "sha256": "047dd43f3f9fb7cc426b1d4ae369181242c5555b84baff5d7e1cbd0dc8b07259",
+              "bytes": 108796
+            },
+            {
+              "name": "CAM_BACK_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/cameras/CAM_BACK_LEFT.jpg",
+              "sha256": "27b2826991733662e4f17c509ad5a66e85e0ca66a6413063d8db9645fa608c11",
+              "bytes": 110941
+            },
+            {
+              "name": "CAM_BACK_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_000/cameras/CAM_BACK_RIGHT.jpg",
+              "sha256": "a998caf0e327816b82d2a142d2581a8c1f9c4e67d50b4af3718a381337b7e415",
+              "bytes": 124547
+            }
+          ]
+        }
+      }
+    },
+    "sample_001": {
+      "dataset_index": 1,
+      "sample_token": "3950bd41f74548429c0f7700ff3d8269",
+      "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+      "prev_token": "3e8750f331d7499e9b5123e9eb70f2e2",
+      "next_token": "c5f58c19249d4137ae063b0e9ecd8b8e",
+      "is_scene_start": false,
+      "assets": {
+        "can_bus": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            18
+          ],
+          "bytes": 36,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/can_bus.raw",
+          "sha256": "8ece2acd67155365b9394e1569b8242d69f3d9805cea19a5153cb51e79e55152"
+        },
+        "shift": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            2
+          ],
+          "bytes": 4,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/shift.raw",
+          "sha256": "530492c17f13ce48ec402622565d7a4ba0987a57b988a3c4d824cc4987dfd5fc"
+        },
+        "lidar2img": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            6,
+            4,
+            4
+          ],
+          "bytes": 192,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/lidar2img.raw",
+          "sha256": "63d7bcbf3a9c63e1184947d9e5112fe30bf4e8533ea29df44daeef3cb610a2ed"
+        },
+        "rotation_can_bus": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            18
+          ],
+          "bytes": 72,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/rotation_can_bus.raw",
+          "sha256": "741d75aad896829e7246d446635bc21331242c7e28ef869f986d70e048d40962"
+        },
+        "camera_images": {
+          "type": "raw_camera_jpeg_multiview",
+          "order": [
+            "CAM_FRONT",
+            "CAM_FRONT_RIGHT",
+            "CAM_FRONT_LEFT",
+            "CAM_BACK",
+            "CAM_BACK_LEFT",
+            "CAM_BACK_RIGHT"
+          ],
+          "decode": "cv2.imread BGR",
+          "pipeline": "BGR -> RGB -> normalize(mean/std) -> resize(800,450) -> CHW -> pad to 480 rows",
+          "mean": [
+            123.675,
+            116.28,
+            103.53
+          ],
+          "std": [
+            58.395,
+            57.12,
+            57.375
+          ],
+          "to_rgb": true,
+          "resize": [
+            800,
+            450
+          ],
+          "output_shape_unpadded": [
+            6,
+            3,
+            450,
+            800
+          ],
+          "output_shape_padded": [
+            6,
+            3,
+            480,
+            800
+          ],
+          "reference_preprocessed_sha256": "ecc0a38ce961abecd5063c3b5c8cb543a63cb423c032ca06fbdc8efc73b66f4a",
+          "images": [
+            {
+              "name": "CAM_FRONT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/cameras/CAM_FRONT.jpg",
+              "sha256": "d5624fcecf12310c3d0760362e097c38cdcdce987e032aaf2883071cd14e2732",
+              "bytes": 146297
+            },
+            {
+              "name": "CAM_FRONT_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/cameras/CAM_FRONT_RIGHT.jpg",
+              "sha256": "dd64d7463bc06bfd5d5378bdd494b40d68d0894307f3ed971eaaaf131022cf68",
+              "bytes": 143628
+            },
+            {
+              "name": "CAM_FRONT_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/cameras/CAM_FRONT_LEFT.jpg",
+              "sha256": "0fe15c0581db41e084df27acb2183b0ab9b0fd36da136ef1b4bcbda6f1a84c58",
+              "bytes": 146244
+            },
+            {
+              "name": "CAM_BACK",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/cameras/CAM_BACK.jpg",
+              "sha256": "fdbdaa77e60ed5a6a762a4ea9a8eb1cb2ca9a3d94c610a55a2399a05c04b6ba6",
+              "bytes": 109601
+            },
+            {
+              "name": "CAM_BACK_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/cameras/CAM_BACK_LEFT.jpg",
+              "sha256": "000f7943769e91ffa842a7dfd1bfc31e0c3f4b37325a98846e8261304028f2ad",
+              "bytes": 112425
+            },
+            {
+              "name": "CAM_BACK_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_001/cameras/CAM_BACK_RIGHT.jpg",
+              "sha256": "39d28a8a5a6f61370a7e7e1e965a6d8610b571195c50fd29da960e1fb2fbee80",
+              "bytes": 125712
+            }
+          ]
+        }
+      }
+    },
+    "sample_002": {
+      "dataset_index": 2,
+      "sample_token": "c5f58c19249d4137ae063b0e9ecd8b8e",
+      "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+      "prev_token": "3950bd41f74548429c0f7700ff3d8269",
+      "next_token": "700c1a25559b4433be532de3475e58a9",
+      "is_scene_start": false,
+      "assets": {
+        "can_bus": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            18
+          ],
+          "bytes": 36,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/can_bus.raw",
+          "sha256": "e8badd418a0eb1905986c2a2a5e87fa6e16532dc4899cfff93f47dbe51bed9be"
+        },
+        "shift": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            2
+          ],
+          "bytes": 4,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/shift.raw",
+          "sha256": "9cd32a1a7fbb67a9841ebee6acf497db1fa6142ec9e3ec5c9bb1596dd8be81e8"
+        },
+        "lidar2img": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            6,
+            4,
+            4
+          ],
+          "bytes": 192,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/lidar2img.raw",
+          "sha256": "7d524fefbeec4c1014ab2773b722aaa13774cb4787fb950e27b1b4de7cc3d403"
+        },
+        "rotation_can_bus": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            18
+          ],
+          "bytes": 72,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/rotation_can_bus.raw",
+          "sha256": "a08e149204cd22c460e8b5cc62726de1b29d22fb05b6c33b450e1f94a162d3c1"
+        },
+        "camera_images": {
+          "type": "raw_camera_jpeg_multiview",
+          "order": [
+            "CAM_FRONT",
+            "CAM_FRONT_RIGHT",
+            "CAM_FRONT_LEFT",
+            "CAM_BACK",
+            "CAM_BACK_LEFT",
+            "CAM_BACK_RIGHT"
+          ],
+          "decode": "cv2.imread BGR",
+          "pipeline": "BGR -> RGB -> normalize(mean/std) -> resize(800,450) -> CHW -> pad to 480 rows",
+          "mean": [
+            123.675,
+            116.28,
+            103.53
+          ],
+          "std": [
+            58.395,
+            57.12,
+            57.375
+          ],
+          "to_rgb": true,
+          "resize": [
+            800,
+            450
+          ],
+          "output_shape_unpadded": [
+            6,
+            3,
+            450,
+            800
+          ],
+          "output_shape_padded": [
+            6,
+            3,
+            480,
+            800
+          ],
+          "reference_preprocessed_sha256": "97fc26501e167d58279ce6229847cd6753b13b2b1795effba7dcbf282f99fc2e",
+          "images": [
+            {
+              "name": "CAM_FRONT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/cameras/CAM_FRONT.jpg",
+              "sha256": "0bb82b89f9e6ce47d9e1bcd747b01fe3fd342ccc67eb7a9c693a3fc3fc73a6bc",
+              "bytes": 145856
+            },
+            {
+              "name": "CAM_FRONT_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/cameras/CAM_FRONT_RIGHT.jpg",
+              "sha256": "70856b9d713c279b4b3d5911be30944f339760cc81da5a8f2c4d90a20276c1d3",
+              "bytes": 132652
+            },
+            {
+              "name": "CAM_FRONT_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/cameras/CAM_FRONT_LEFT.jpg",
+              "sha256": "4782aaa9180ef1fe153e702031a3249ada09bdb056ad13ff69abaa2f9e59e35a",
+              "bytes": 145095
+            },
+            {
+              "name": "CAM_BACK",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/cameras/CAM_BACK.jpg",
+              "sha256": "a9a05b52aea16ccf730447170eb836697c26928a112a74249caf423d91d28306",
+              "bytes": 111521
+            },
+            {
+              "name": "CAM_BACK_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/cameras/CAM_BACK_LEFT.jpg",
+              "sha256": "a28438e9ff68ccab2ce3a8da4151591a2b15780aecdc21185a911318ed923f72",
+              "bytes": 112445
+            },
+            {
+              "name": "CAM_BACK_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_002/cameras/CAM_BACK_RIGHT.jpg",
+              "sha256": "1578ba72afd2cc91abb1295c3404a432e41ffc7385b4031a43b586acfb693872",
+              "bytes": 132515
+            }
+          ]
+        }
+      }
+    },
+    "sample_003": {
+      "dataset_index": 3,
+      "sample_token": "700c1a25559b4433be532de3475e58a9",
+      "scene_token": "fcbccedd61424f1b85dcbf8f897f9754",
+      "prev_token": "c5f58c19249d4137ae063b0e9ecd8b8e",
+      "next_token": "747aa46b9a4641fe90db05d97db2acea",
+      "is_scene_start": false,
+      "assets": {
+        "can_bus": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            18
+          ],
+          "bytes": 36,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/can_bus.raw",
+          "sha256": "dbc4945c65d5804131f75f04578e3fbc288330ff5fa977f224eda07eb96e463a"
+        },
+        "shift": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            2
+          ],
+          "bytes": 4,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/shift.raw",
+          "sha256": "8cc4c98a9615a420d40104ae51d4f1f50b719a9cfec4be8d1b65b4b704517def"
+        },
+        "lidar2img": {
+          "dtype": "float16",
+          "shape": [
+            1,
+            6,
+            4,
+            4
+          ],
+          "bytes": 192,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/lidar2img.raw",
+          "sha256": "64cd7874438918c64f54414d1b873b0b0fcf05b2b601f2014c4fe5a8316e7a2c"
+        },
+        "rotation_can_bus": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            18
+          ],
+          "bytes": 72,
+          "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/rotation_can_bus.raw",
+          "sha256": "3c88129317e663a14f4ba55a3c0c3cc25e9ec2cd4c497276567e4ecfed8a9ab6"
+        },
+        "camera_images": {
+          "type": "raw_camera_jpeg_multiview",
+          "order": [
+            "CAM_FRONT",
+            "CAM_FRONT_RIGHT",
+            "CAM_FRONT_LEFT",
+            "CAM_BACK",
+            "CAM_BACK_LEFT",
+            "CAM_BACK_RIGHT"
+          ],
+          "decode": "cv2.imread BGR",
+          "pipeline": "BGR -> RGB -> normalize(mean/std) -> resize(800,450) -> CHW -> pad to 480 rows",
+          "mean": [
+            123.675,
+            116.28,
+            103.53
+          ],
+          "std": [
+            58.395,
+            57.12,
+            57.375
+          ],
+          "to_rgb": true,
+          "resize": [
+            800,
+            450
+          ],
+          "output_shape_unpadded": [
+            6,
+            3,
+            450,
+            800
+          ],
+          "output_shape_padded": [
+            6,
+            3,
+            480,
+            800
+          ],
+          "reference_preprocessed_sha256": "da157bc039b66254cb57f827adcdfde783d324a078a15af9740a3701697eba15",
+          "images": [
+            {
+              "name": "CAM_FRONT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/cameras/CAM_FRONT.jpg",
+              "sha256": "54384bc8c4896f349bdc643b573f398fbb03ee842ac2af2af2c602a62f48f79d",
+              "bytes": 147138
+            },
+            {
+              "name": "CAM_FRONT_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/cameras/CAM_FRONT_RIGHT.jpg",
+              "sha256": "4c5209d28a7e3a5f29bd7c02c29bd0f53c669afc43b17af2db098371a9711dc1",
+              "bytes": 145853
+            },
+            {
+              "name": "CAM_FRONT_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/cameras/CAM_FRONT_LEFT.jpg",
+              "sha256": "1f20956c425bdc84da1bf2610b7214d48930652782394aa0f1f3bef94ce0be35",
+              "bytes": 146337
+            },
+            {
+              "name": "CAM_BACK",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/cameras/CAM_BACK.jpg",
+              "sha256": "34e84e10e04ab229864bd0ddd3067442c0b58e249eeb48088ab417cb259b4985",
+              "bytes": 112516
+            },
+            {
+              "name": "CAM_BACK_LEFT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/cameras/CAM_BACK_LEFT.jpg",
+              "sha256": "cdf1f064c61add58e17d7011713aebbe40be9d7e8290c8816f585fca3841e033",
+              "bytes": 113884
+            },
+            {
+              "name": "CAM_BACK_RIGHT",
+              "path": "bevformer_delivery_demo/datasets/sample4/frames/sample_003/cameras/CAM_BACK_RIGHT.jpg",
+              "sha256": "eae354ba8407662caa6c50934b6ee306a4e5aaaeec0b0f2e40c2f6b481485d3f",
+              "bytes": 135629
+            }
+          ]
+        }
+      }
+    }
+  },
+  "contract": {
+    "image_pipeline": "cv2.imread BGR -> RGB -> normalize(mean=[123.675,116.28,103.53], std=[58.395,57.12,57.375]) -> cv2.resize(800,450) -> CHW -> zero-pad to (6,3,480,800)",
+    "camera_order": [
+      "CAM_FRONT",
+      "CAM_FRONT_RIGHT",
+      "CAM_FRONT_LEFT",
+      "CAM_BACK",
+      "CAM_BACK_LEFT",
+      "CAM_BACK_RIGHT"
+    ],
+    "model_path": "W8A8 backbone + scene-start/temporal encoder + decoder AidLite QNN contexts",
+    "temporal_state": "scene-start uses reset semantics; temporal frames use previous live bev_embed as prev_bev",
+    "scene_start_inputs": "camera_images + can_bus + lidar2img; no prev_bev/shift input is required for scene-start encoder",
+    "temporal_inputs": "camera_images + can_bus + lidar2img + shift + rotated previous live bev_embed"
+  }
+}
