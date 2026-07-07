@@ -1,12 +1,12 @@
-{
+﻿{
   "name": "bevformer_delivery_demo",
   "default_variant": "strict_w8a8_train64",
   "purpose": "YOLOv5s-style Python board demo for BEVFormer AidLite inference from raw camera JPG inputs to final W8A8 detections and visualization.",
   "models": {
-    "backbone": "artifacts/models/backbone_context.bin",
-    "encoder_temporal": "artifacts/models/temporal_encoder_context.bin",
-    "encoder_scene_start": "artifacts/models/scene_start_encoder_context.bin",
-    "decoder": "artifacts/models/decoder_context.bin"
+    "backbone": "models/backbone_context.bin",
+    "encoder_temporal": "models/temporal_encoder_context.bin",
+    "encoder_scene_start": "models/scene_start_encoder_context.bin",
+    "decoder": "models/decoder_context.bin"
   },
   "sha256": {
     "backbone": "a1988955080440ba95892b7b484f3677948508fcdae94a3e4aca34ff5b055a76",

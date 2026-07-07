@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import json
@@ -13,10 +13,10 @@ PACKAGE_DIR = Path(__file__).resolve().parent
 DEMO_ROOT = PACKAGE_DIR.parent
 REPO_ROOT = DEMO_ROOT.parent
 
-DEFAULT_BACKBONE = DEMO_ROOT / "artifacts/models/backbone_context.bin"
-DEFAULT_ENCODER_TEMPORAL = DEMO_ROOT / "artifacts/models/temporal_encoder_context.bin"
-DEFAULT_ENCODER_SCENE_START = DEMO_ROOT / "artifacts/models/scene_start_encoder_context.bin"
-DEFAULT_DECODER = DEMO_ROOT / "artifacts/models/decoder_context.bin"
+DEFAULT_BACKBONE = DEMO_ROOT / "models/backbone_context.bin"
+DEFAULT_ENCODER_TEMPORAL = DEMO_ROOT / "models/temporal_encoder_context.bin"
+DEFAULT_ENCODER_SCENE_START = DEMO_ROOT / "models/scene_start_encoder_context.bin"
+DEFAULT_DECODER = DEMO_ROOT / "models/decoder_context.bin"
 DEFAULT_CONFIG = DEMO_ROOT / "configs/demo_config.json"
 DEFAULT_MANIFEST = DEMO_ROOT / "datasets/sample4/asset_manifest.json"
 DEFAULT_NMS_CONTRACT = DEMO_ROOT / "configs/nms_runtime_contract.json"

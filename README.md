@@ -1,4 +1,4 @@
-# BEVFormer Delivery Demo
+﻿# BEVFormer Delivery Demo
 
 YOLOv5s-style Python board demo for BEVFormer AidLite/QNN240 deployment.
 The default demo is self-contained: it runs four continuous frames and writes
@@ -44,10 +44,8 @@ YOLOv5s-style frame-count alias is also supported:
 python3 python/run_test.py --invoke_nums 4 --output_dir outputs/smoke4
 ```
 
-默认使用 6 个 worker 并行处理 6 路相机 JPG，这个值已经固定在 demo 内部，演示时不需要额外传入 worker 参数。
-
-默认运行会检查图片文件是否存在，并从原始 JPG 做预处理；为减少板端计时开销，逐张 JPG 的 SHA 校验默认关闭。需要审计每张图片 SHA 时加：
-
+榛樿浣跨敤 6 涓?worker 骞惰澶勭悊 6 璺浉鏈?JPG锛岃繖涓€煎凡缁忓浐瀹氬湪 demo 鍐呴儴锛屾紨绀烘椂涓嶉渶瑕侀澶栦紶鍏?worker 鍙傛暟銆?
+榛樿杩愯浼氭鏌ュ浘鐗囨枃浠舵槸鍚﹀瓨鍦紝骞朵粠鍘熷 JPG 鍋氶澶勭悊锛涗负鍑忓皯鏉跨璁℃椂寮€閿€锛岄€愬紶 JPG 鐨?SHA 鏍￠獙榛樿鍏抽棴銆傞渶瑕佸璁℃瘡寮犲浘鐗?SHA 鏃跺姞锛?
 ```bash
 python3 python/run_test.py --invoke_nums 4 --check_image_sha
 ```

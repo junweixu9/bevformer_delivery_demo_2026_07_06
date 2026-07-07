@@ -1,4 +1,4 @@
-# Board Environment Dependencies
+﻿# Board Environment Dependencies
 
 This demo is intended to run on the AidLux board environment where the AidLite QNN240 runtime is available. A normal development container can run `--dry_run`, but cannot execute the QNN contexts unless `import aidlite` succeeds.
 
@@ -58,10 +58,10 @@ python3 python/run_test.py --invoke_nums 4 --output_dir outputs/final_sample4
 Required model files:
 
 ```text
-artifacts/models/backbone_context.bin
-artifacts/models/scene_start_encoder_context.bin
-artifacts/models/temporal_encoder_context.bin
-artifacts/models/decoder_context.bin
+models/backbone_context.bin
+models/scene_start_encoder_context.bin
+models/temporal_encoder_context.bin
+models/decoder_context.bin
 ```
 
 Required config files:
