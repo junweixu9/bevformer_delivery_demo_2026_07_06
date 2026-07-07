@@ -1,4 +1,4 @@
-﻿# Board Environment Dependencies
+# Board Environment Dependencies
 
 This demo is intended to run on the AidLux board environment where the AidLite QNN240 runtime is available. A normal development container can run `--dry_run`, but cannot execute the QNN contexts unless `import aidlite` succeeds.
 
