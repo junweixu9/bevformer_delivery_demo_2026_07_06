@@ -10,8 +10,7 @@ the full path from bundled raw camera JPEGs to detection arrays and real-camera 
 - `python/run_demo.py`: argument parsing and demo orchestration.
 - `python/bevformer.py`: AidLite/QNN240 backbone, encoder, decoder pipeline.
 - `python/portable_numpy_nmsfreecoder.py`: BEVFormer decoder postprocess.
-- `python/camera_grid_visualization.py`: random10-style six-camera grid rendering.
-- `python/visualize_sample4.py`: regenerates the fixed four W8A8-only camera-grid images from saved NPZ outputs.
+- `python/camera_grid_visualization.py`: six-camera grid rendering used by the main demo.
 - `datasets/sample4`: four continuous frames with bundled six-camera JPGs plus the required calibration/temporal auxiliary tensors.
 - `docs/BOARD_ENVIRONMENT.md`: board runtime and Python dependency notes.
 
@@ -79,11 +78,7 @@ written under the selected output directory:
 - `sample4_camera_grid.gif`: four-frame camera-grid animation.
 - `frameXXX_cls_scores_fp32.raw` / `frameXXX_bbox_preds_fp32.raw`: saved for the final frame by default.
 
-Visualization uses only the W8A8 board inference output and follows the original `visualize_random10.sh` camera-grid style. To regenerate the four images/GIF from saved NPZ files:
-
-```bash
-python3 python/visualize_sample4.py --results_dir outputs/smoke4
-```
+Visualization is generated directly by the main `python/run_test.py` flow when visualization is enabled.
 
 ## Image Preprocessing
 
@@ -124,4 +119,4 @@ for package inspection:
 python3 python/run_test.py --dry_run
 ```
 
-Real inference must run on the board. Camera-grid visualization can be regenerated on the board from saved NPZ outputs.
+Real inference must run on the board. Camera-grid visualization is produced by the main demo flow from saved detection outputs.
